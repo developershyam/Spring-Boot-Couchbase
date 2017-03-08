@@ -1,6 +1,5 @@
 package com.sample.config;
 
-import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -119,6 +118,5 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 		resolver.setViewClass(TilesView.class);
 		return resolver;
 	}
-
 
 }

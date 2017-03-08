@@ -8,20 +8,25 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.couchbase.config.AbstractCouchbaseConfiguration;
 import org.springframework.data.couchbase.repository.config.EnableCouchbaseRepositories;
 
+/**
+ * This is class is used to configure Couchbase DB.
+ * 
+ * @author shyam.pareek
+ *
+ */
 @Configuration
 @EnableCouchbaseRepositories
 public class DatabaseConfig extends AbstractCouchbaseConfiguration {
 
 	@Value("${couchbase.cluster.ip}")
 	private String ip;
-	
+
 	@Value("${couchbase.cluster.bucket}")
 	private String bucketName;
-	
+
 	@Value("${couchbase.cluster.password}")
 	private String bucketPassword;
 
-	
 	public String getBucketName() {
 		return bucketName;
 	}

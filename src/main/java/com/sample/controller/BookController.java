@@ -1,9 +1,6 @@
 package com.sample.controller;
 
-import java.math.BigInteger;
-import java.security.SecureRandom;
 import java.util.Collection;
-import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -19,8 +16,13 @@ import com.sample.dto.AppResponse;
 import com.sample.dto.DataWrapper;
 import com.sample.service.BookService;
 import com.sample.util.AppConstant;
-import com.sample.util.AppUtils;
 
+/**
+ * This is Rest controller used to expose URL for application to access Book.
+ * 
+ * @author shyam.pareek
+ *
+ */
 @RestController
 public class BookController {
 
@@ -43,11 +45,12 @@ public class BookController {
 	public AppResponse addBook(@RequestBody Book book) {
 
 		try {
-			/*if (bookSrvice.findByEmail(employee.getEmail()) != null) {
-				AppResponse response = new AppResponse(AppConstant.ERROR_CODE, true, "Email already exist !!!", null);
-				return response;
-			}*/
-			
+			/*
+			 * if (bookSrvice.findByEmail(employee.getEmail()) != null) {
+			 * AppResponse response = new AppResponse(AppConstant.ERROR_CODE,
+			 * true, "Email already exist !!!", null); return response; }
+			 */
+
 			bookSrvice.addBook(book);
 			AppResponse response = new AppResponse(AppConstant.SUCCESS_CODE, true, "Add Success !!!", null);
 			return response;
@@ -61,11 +64,12 @@ public class BookController {
 	public AppResponse updateBook(@RequestBody Book book) {
 
 		try {
-			/*Book bookDB = employeeService.findByEmail(employee.getEmail());
-			if (!employeeDB.getId().equals(employee.getId())) {
-				AppResponse response = new AppResponse(AppConstant.ERROR_CODE, true, "Email already exist !!!", null);
-				return response;
-			}*/
+			/*
+			 * Book bookDB = employeeService.findByEmail(employee.getEmail());
+			 * if (!employeeDB.getId().equals(employee.getId())) { AppResponse
+			 * response = new AppResponse(AppConstant.ERROR_CODE, true,
+			 * "Email already exist !!!", null); return response; }
+			 */
 			bookSrvice.updateBook(book);
 			AppResponse response = new AppResponse(AppConstant.SUCCESS_CODE, true, "Update Success !!!", null);
 			return response;
@@ -96,7 +100,7 @@ public class BookController {
 			currentPageIndx = 0;
 		}
 		PageRequest pageRequest = new PageRequest(currentPageIndx, 5);
-		
+
 		DataWrapper dataWrapper = bookSrvice.getBooksPage(pageRequest);
 
 		return dataWrapper;

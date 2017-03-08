@@ -6,12 +6,18 @@ import java.util.UUID;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
+/**
+ * This class is designed for common utility methods
+ * 
+ * @author shyam.pareek
+ *
+ */
 @Component
 public class AppUtils {
 
 	/**
-	 * Used for check string object should have non empty string If object is null
-	 * or empty it gives you false otherwise returns true
+	 * Used for check string object should have non empty string If object is
+	 * null or empty it gives you false otherwise returns true
 	 * 
 	 * @param value
 	 * @return condition
@@ -34,13 +40,13 @@ public class AppUtils {
 		}
 		return flag;
 	}
-	
-	public static long generateUniqueId() {      
-        UUID idOne = UUID.randomUUID();
-        String str=""+idOne;        
-        int uid=str.hashCode();
-        String filterStr=""+uid;
-        str=filterStr.replaceAll("-", "");
-        return Long.parseLong(str);
-    }
+
+	public static long generateUniqueId() {
+		UUID idOne = UUID.randomUUID();
+		String str = "" + idOne;
+		int uid = str.hashCode();
+		String filterStr = "" + uid;
+		str = filterStr.replaceAll("-", "");
+		return Long.parseLong(str);
+	}
 }

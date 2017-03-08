@@ -10,7 +10,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sample.data.model.User;
 import com.sample.service.UserService;
-
+/**
+ * This is controller used to expose URL for application to access User.
+ * 
+ * @author shyam.pareek
+ *
+ */
 @Controller
 public class UserController {
 

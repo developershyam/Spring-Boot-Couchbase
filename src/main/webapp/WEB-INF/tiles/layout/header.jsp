@@ -29,13 +29,13 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="navbarCollapse">
 				<ul class="nav navbar-nav">
-					<li id="homeTab" class=""><a href="${contextPath}/welcome"><span
+					<li id="homeTab" class=""><a href="${pageContext.request.contextPath}/welcome"><span
 							class="glyphicon glyphicon-home"
 							style="font-size: 18px; padding-right: 8px"></span> Home</a></li>
-					<li id="bookTab"><a href="${contextPath}/books"><span
+					<li id="bookTab"><a href="${pageContext.request.contextPath}/books"><span
 							class="glyphicon glyphicon-book"
 							style="font-size: 18px; padding-right: 8px"></span> Book</a></li>
-					<li id="managementTab"><a href="${contextPath}/managementView"><span class="glyphicon glyphicon-stats"
+					<li id="managementTab"><a href="${pageContext.request.contextPath}/managementView"><span class="glyphicon glyphicon-stats"
 							style="font-size: 18px; padding-right: 8px"></span> Management</a></li>
 				</ul>
 			</div>
